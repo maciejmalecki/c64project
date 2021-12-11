@@ -1,0 +1,51 @@
+plugins {
+    id "com.github.c64lib.retro-assembler" version "1.5.1"
+}
+
+retroProject {
+    dialect = "KickAssembler"
+    dialectVersion = "5.23"
+    libDirs = [".ra/deps/c64lib", "build/charpad", "build/spritepad", "build/goattracker"]
+
+    libFromGitHub("c64lib/common", "0.3.0")
+    libFromGitHub("c64lib/chipset", "0.3.0")
+}
+
+preprocess {
+
+    // goattracker {
+    //   input = file("song.sng")
+    //   useBuildDir = true
+    //   music {
+    //     output = file("song.sid")
+    //     bufferedSidWrites = true
+    //     sfxSupport = true
+    //     storeAuthorInfo = true
+    //     playerMemoryLocation = 0xF5
+    //   }
+    // }
+
+    // charpad {
+    //   input = file("playfield.ctm")
+    //   useBuildDir = true
+    //   outputs {
+    //     meta {
+    //       dialect = "KickAssembler"
+    //       output = file("playfield-meta.asm")
+    //     }
+    //     charset {
+    //       output = file("playfield-charset.bin")
+    //     }
+    //   }
+    // }
+
+    // spritepad {
+    //   input = file("sprites.spd")
+    //   useBuildDir = true
+    //   outputs {
+    //     sprites {
+    //       output = file("sprites.bin")
+    //     }
+    //   }
+    // }
+}
